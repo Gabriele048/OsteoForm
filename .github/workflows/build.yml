@@ -27,7 +27,7 @@ jobs:
         run: pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" --add-data "templates_html;templates_html" app.py
 
       - name: Upload Windows artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows-executable
           path: dist/app.exe
@@ -52,7 +52,7 @@ jobs:
         run: pyinstaller --onefile --add-data "templates:templates" --add-data "static:static" --add-data "templates_html:templates_html" app.py
 
       - name: Upload macOS artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: macos-executable
           path: dist/app
