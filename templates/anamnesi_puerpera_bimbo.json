@@ -1,0 +1,10 @@
+{
+    "title": "Anamnesi Puerpera Bimbo",
+    "fields": [
+      { "type": "text", "label": "Nome", "name": "nome" },
+      { "type": "number", "label": "Età", "name": "eta" },
+      { "type": "select", "label": "Sesso", "name": "sesso", "options": ["Maschio", "Femmina", "Altro"] },
+      { "type": "textarea", "label": "Sintomi principali", "name": "sintomi" },
+      { "type": "checkbox", "label": "Condizioni croniche", "name": "condizioni", "options": ["Diabete", "Ipertensione", "Asma"] }
+    ]
+}

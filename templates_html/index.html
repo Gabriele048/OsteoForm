@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anamnesi</title>
+</head>
+<body>
+  <h1>Compilazione Anamnesi</h1>
+
+  <!-- Menu a tendina per scegliere il template -->
+  <label for="templateSelect">Scegli un template:</label>
+  <select id="templateSelect">
+    <option value="">-- Seleziona un template --</option>
+  </select>
+
+  <!-- Contenitore per il form -->
+  <form id="dynamicForm"></form>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="/static/js/html2pdf.bundle.min.js"></script>
+</body>
+</html>
