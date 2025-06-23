@@ -19,5 +19,16 @@
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <script src="/static/js/html2pdf.bundle.min.js"></script>
+
+  <!-- Aggiungi qui il pulsante "Esci" -->
+  <button onclick="exitApp()">Esci</button>
+  <script>
+    function exitApp() {
+      fetch("/shutdown", { method: "POST" })
+        .then(() => {
+          window.close(); // Prova a chiudere la finestra del browser
+        });
+    }
+  </script>
 </body>
 </html>
