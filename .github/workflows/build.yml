@@ -64,6 +64,9 @@ jobs:
     name: Create GitHub Release
     needs: [build-windows, build-macos]
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_TAG: ${{ github.ref_name }}  # estrae "V1.0" da "refs/tags/V1.0"
 
     steps:
       - name: Download Windows artifact
@@ -84,11 +87,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ github.run_number }}
-          name: Release v${{ github.run_number }}
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: Release ${{ env.RELEASE_TAG }}
           files: |
             dist/windows/app.exe
             dist/macos/app
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
